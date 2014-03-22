@@ -1,0 +1,48 @@
+﻿@model MvcFinalAssignment.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+     <legend>Donation</legend>
+
+   <div class="display-label">
+         @Html.DisplayNameFor(model => model.Person.PersonLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.PersonLastName)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Person.PersonFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.PersonFirstName)
+    </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Person.PersonUsername)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.PersonUsername)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DonationAmount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationAmount)
+    </div>
+</fieldset>
+<p>
+    
+    @Html.ActionLink("Back to List", "Index")
+</p>

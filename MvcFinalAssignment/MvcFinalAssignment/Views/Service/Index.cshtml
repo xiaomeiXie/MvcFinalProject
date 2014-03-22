@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MvcFinalAssignment.Models.CommunityService>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Community Services</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            ServiceKey
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceName)
+        </th>
+        <th>
+           Description
+        </th>
+        <th>
+           Max
+        </th>
+        <th>
+           LifetimeMax
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceKey)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceMaximum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceLifetimeMaximum)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.ServiceKey }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.ServiceKey }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.ServiceKey })
+        </td>
+    </tr>
+}
+
+</table>

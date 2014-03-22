@@ -1,0 +1,67 @@
+﻿@model MvcFinalAssignment.Models.CommunityService
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CommunityService</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceKey)
+            @Html.ValidationMessageFor(model => model.ServiceKey)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceName)
+            @Html.ValidationMessageFor(model => model.ServiceName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceDescription)
+            @Html.ValidationMessageFor(model => model.ServiceDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceMaximum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceMaximum)
+            @Html.ValidationMessageFor(model => model.ServiceMaximum)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceLifetimeMaximum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceLifetimeMaximum)
+            @Html.ValidationMessageFor(model => model.ServiceLifetimeMaximum)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

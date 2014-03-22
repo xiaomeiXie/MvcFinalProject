@@ -1,0 +1,50 @@
+﻿@model MvcFinalAssignment.Models.CommunityService
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>CommunityService</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceKey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceKey)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceMaximum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceMaximum)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceLifetimeMaximum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceLifetimeMaximum)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.ServiceKey}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

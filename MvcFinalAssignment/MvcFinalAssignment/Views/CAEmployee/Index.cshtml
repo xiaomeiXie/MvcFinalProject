@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MvcFinalAssignment.Models.CAEmployee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>Here are our Employees</p>
+<table id="table1">
+    <thead>
+     <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Email</th>
+        <th>Hire Date</th>
+        <th>Job Title</th>
+        <th>Job Status</th>
+     </tr>
+
+    </thead>
+    <tbody>
+        
+        @foreach (var item in Model)
+        {
+
+           
+            <tr class="cellcolor"><td>@Html.DisplayFor(modelItem => item.LastName)</td>
+                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.HireDate)</td>
+                <td>@Html.DisplayFor(modelItem => item.JobTitle)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+
+            </tr>
+        
+        }
+
+
+    </tbody>
+</table>
+

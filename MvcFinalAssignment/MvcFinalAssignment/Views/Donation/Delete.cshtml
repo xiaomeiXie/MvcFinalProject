@@ -1,0 +1,53 @@
+﻿@model MvcFinalAssignment.Models.Donation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Donation</legend>
+
+     <div class="display-label">
+        <em><strong> @Html.DisplayNameFor(model => model.Person.PersonLastName)</strong></em>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.PersonLastName)
+    </div>
+     <div class="display-label">
+         <em><strong>@Html.DisplayNameFor(model => model.Person.PersonFirstName)</strong></em>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.PersonFirstName)
+    </div>
+    <div class="display-label">
+        <em><strong> Person Email</strong></em>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.PersonUsername)
+    </div>
+    <div class="display-label">
+        <em><strong>  @Html.DisplayNameFor(model => model.DonationDate)</strong></em>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationDate)
+    </div>
+
+    <div class="display-label">
+        <em><strong>  @Html.DisplayNameFor(model => model.DonationAmount)</strong></em>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DonationAmount)
+    </div>
+
+    
+   
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

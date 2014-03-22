@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MvcFinalAssignment.Models.Donation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Donation List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table>
+   
+           <tr>
+        <th>
+           Last Name
+        </th>
+        <th>
+            First Name
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Donation Date
+        </th>
+        <th>
+            Donation Amount
+        </th>
+        
+        <th></th>
+    </tr>
+ 
+
+@foreach (var item in Model) {
+   
+       <tr class="cellcolor" >
+         <td>
+            @Html.DisplayFor(modelItem => item.Person.PersonLastName)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Person.PersonFirstName)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Person.PersonUsername)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationAmount)
+        </td>
+       
+        
+        <td>
+           
+            @Html.ActionLink("Details", "Details", new {  id=item.DonationKey }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.DonationKey  })
+        </td>
+    </tr>
+}
+
+</table>
